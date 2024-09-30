@@ -8,8 +8,13 @@ function App() {
   const[hours,sethours]=useState(0)
   const[planner ,setplanner]= useState([])
 
-  const handleClick = ()=>{
-
+  const handleClick = (e)=>{
+    e.preventDefault();
+    const obj={
+      subject : subject,
+      hours : hours
+    }
+    setplanner([obj]);
   }
 
   return (
@@ -19,10 +24,20 @@ function App() {
       <h1>Education planner</h1>
     </div>
     <div className="half">
-      <input type="text" placeholder='Name'/>
-      <input type="number" placeholder='hours'/>
+      <input onChange={(e)=>{
+        subject = e.target.value;
+      }} type="text" placeholder='Name'/>
+      <input onChange={(e)=>{
+        hours = e.target.value;
+      }} type="number" placeholder='hours'/>
       <button onClick={handleClick}>Add plan</button>
     </div>
+    <form>
+      {
+        planner.map(index,value)
+          
+      }
+    </form>
    </main>
    </>
   )
