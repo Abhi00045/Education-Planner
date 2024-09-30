@@ -34,7 +34,15 @@ function App() {
     </div>
     <form>
       {
-        planner.map(index,value)
+        planner.map((sub,index)=>{
+          return(
+           <div>
+            <p>{sub.subject}-{sub.hours}Hours</p>
+            <button>+</button>
+            <button>-</button>
+           </div>
+          )
+        })
           
       }
     </form>
