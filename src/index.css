@@ -6,6 +6,10 @@ body {
   justify-content: center;
   align-items: center;
 }
+.box{
+  border: 2px solid cadetblue;
+  border-radius: 20px;
+}
 
 h1 {
   font-size: 1.5rem;
